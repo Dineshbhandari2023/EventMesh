@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "@sequelize/postgres": "^7.0.0-alpha.48",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "sequelize": "^6.37.8"
   }
 }

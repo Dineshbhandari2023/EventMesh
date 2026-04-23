@@ -1,5 +1,5 @@
 const express = require("express");
-const pool = require("./config/db");
+const pool = require("./db");
 require("dotenv").config();
 
 const app = express();
@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
   res.send("EventMesh API running 🚀");
 });
 
+-- Create User Example
 app.post("/users", async (req, res) => {
   try {
     const { first_name, last_name, email, password_hash } = req.body;
@@ -17,7 +18,7 @@ app.post("/users", async (req, res) => {
       `INSERT INTO users (first_name, last_name, email, password_hash)
        VALUES ($1, $2, $3, $4)
        RETURNING *`,
-      [first_name, last_name, email, password_hash],
+      [first_name, last_name, email, password_hash]
     );
 
     res.json(result.rows[0]);
